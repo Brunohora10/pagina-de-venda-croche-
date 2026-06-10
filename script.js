@@ -92,4 +92,19 @@ document.addEventListener("DOMContentLoaded", () => {
     countdown.textContent = format(remainingSeconds);
     setInterval(tick, 1000);
   }
+
+  /* ---------- Destaque da oferta ao clicar em "comprar" ---------- */
+  const offerCard = document.querySelector(".offer-card");
+  if (offerCard) {
+    const offerLinks = document.querySelectorAll('a[href="#oferta"]');
+    offerLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        offerCard.classList.remove("is-highlight");
+        // força reinício da animação
+        void offerCard.offsetWidth;
+        offerCard.classList.add("is-highlight");
+        window.setTimeout(() => offerCard.classList.remove("is-highlight"), 1600);
+      });
+    });
+  }
 });
