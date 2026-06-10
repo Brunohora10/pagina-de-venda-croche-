@@ -95,16 +95,65 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* ---------- Destaque da oferta ao clicar em "comprar" ---------- */
   const offerCard = document.querySelector(".offer-card");
-  if (offerCard) {
-    const offerLinks = document.querySelectorAll('a[href="#oferta"]');
-    offerLinks.forEach((link) => {
-      link.addEventListener("click", () => {
-        offerCard.classList.remove("is-highlight");
-        // força reinício da animação
-        void offerCard.offsetWidth;
-        offerCard.classList.add("is-highlight");
-        window.setTimeout(() => offerCard.classList.remove("is-highlight"), 1600);
-      });
+
+  /* ---------- Rolagem suave com easing até as âncoras ---------- */
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const urgencyBar = document.querySelector(".urgency-bar");
+  const topbar = document.querySelector(".topbar");
+
+  const headerOffset = () => {
+    const bar = urgencyBar ? urgencyBar.offsetHeight : 0;
+    const nav = topbar ? topbar.offsetHeight : 0;
+    return bar + nav + 12;
+  };
+
+  const easeInOutCubic = (t) =>
+    t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+
+  const smoothScrollTo = (targetY, duration = 800) => {
+    const startY = window.pageYOffset;
+    const distance = targetY - startY;
+    let startTime = null;
+
+    const step = (now) => {
+      if (startTime === null) startTime = now;
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      window.scrollTo(0, startY + distance * easeInOutCubic(progress));
+      if (progress < 1) window.requestAnimationFrame(step);
+    };
+
+    window.requestAnimationFrame(step);
+  };
+
+  const highlightOffer = () => {
+    if (!offerCard) return;
+    offerCard.classList.remove("is-highlight");
+    void offerCard.offsetWidth; // força reinício da animação
+    offerCard.classList.add("is-highlight");
+    window.setTimeout(() => offerCard.classList.remove("is-highlight"), 1600);
+  };
+
+  document.querySelectorAll('a[href^="#"]').forEach((link) => {
+    link.addEventListener("click", (event) => {
+      const targetId = link.getAttribute("href");
+      if (!targetId || targetId === "#") return;
+      const target = document.querySelector(targetId);
+      if (!target) return;
+
+      event.preventDefault();
+      const targetY = target.getBoundingClientRect().top + window.pageYOffset - headerOffset();
+
+      if (prefersReducedMotion) {
+        window.scrollTo(0, targetY);
+      } else {
+        smoothScrollTo(targetY);
+      }
+
+      // Realça o card da oferta quando o destino for a seção da oferta
+      if (targetId === "#oferta") {
+        window.setTimeout(highlightOffer, prefersReducedMotion ? 0 : 760);
+      }
     });
-  }
+  });
 });
