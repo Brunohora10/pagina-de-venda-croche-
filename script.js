@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* ---------- Contador visual da oferta (não trava nada) ---------- */
   if (countdown) {
-    const startSeconds = 15 * 60; // 15 minutos
+    const startSeconds = 60 * 60; // 1 hora
     let remainingSeconds = startSeconds;
 
     const format = (seconds) => {
@@ -106,6 +106,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const nav = topbar ? topbar.offsetHeight : 0;
     return bar + nav + 12;
   };
+
+  /* ---------- Mantém o menu colado logo abaixo da barra de oferta ---------- */
+  const syncTopbarOffset = () => {
+    if (urgencyBar && topbar) {
+      topbar.style.top = `${urgencyBar.offsetHeight}px`;
+    }
+  };
+  syncTopbarOffset();
+  window.addEventListener("resize", syncTopbarOffset);
 
   const easeInOutCubic = (t) =>
     t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
