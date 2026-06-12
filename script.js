@@ -165,4 +165,46 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
+
+  /* ---------- Rastreamento do Meta Pixel ---------- */
+  const fireFbq = (event, params) => {
+    if (typeof window.fbq === "function") {
+      window.fbq("track", event, params);
+    }
+  };
+
+  const checkoutParams = {
+    content_name: "Crochê Digital da Vovó — Acesso Completo",
+    content_category: "Crochê Digital",
+    content_ids: ["croche-digital-vovo"],
+    content_type: "product",
+    value: 19.9,
+    currency: "BRL",
+  };
+
+  // InitiateCheckout: dispara ao clicar em qualquer botão que leva ao checkout
+  document.querySelectorAll('a[href*="pay.cakto.com.br"]').forEach((link) => {
+    link.addEventListener("click", () => {
+      fireFbq("InitiateCheckout", checkoutParams);
+    });
+  });
+
+  // ViewContent: dispara quando a pessoa visualiza a seção da oferta
+  const offerSection = document.getElementById("oferta");
+  if (offerSection && "IntersectionObserver" in window) {
+    let viewContentSent = false;
+    const offerObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !viewContentSent) {
+            viewContentSent = true;
+            fireFbq("ViewContent", checkoutParams);
+            offerObserver.disconnect();
+          }
+        });
+      },
+      { threshold: 0.4 }
+    );
+    offerObserver.observe(offerSection);
+  }
 });
