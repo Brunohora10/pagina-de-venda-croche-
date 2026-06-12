@@ -199,6 +199,10 @@ h1, h2, h3 { letter-spacing: -0.02em; }
 .rating-row { display: flex; align-items: center; gap: 10px; margin-top: 18px; font-weight: 700; color: var(--muted); font-size: 0.95rem; }
 .stars { color: var(--gold); letter-spacing: 2px; font-size: 1.05rem; }
 
+.hero-price { display: flex; align-items: baseline; flex-wrap: wrap; gap: 10px; margin: 6px 0 18px; }
+.hero-price__old { color: var(--muted); font-weight: 700; font-size: 1rem; text-decoration: line-through; text-decoration-color: var(--pink); }
+.hero-price__new { font-family: "Poppins", "Nunito", sans-serif; font-weight: 900; font-size: clamp(2.2rem, 6vw, 3rem); color: var(--pink); line-height: 1; }
+
 .hero__visual { position: relative; }
 .product-cover {
   position: relative; margin: 0; aspect-ratio: 4 / 4.2;
