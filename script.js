@@ -10,7 +10,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const menuToggle = document.querySelector("[data-menu-toggle]");
   const menuLinks = document.querySelector("[data-menu-links]");
   const accordion = document.querySelector("[data-accordion]");
-  const countdown = document.getElementById("countdown");
 
   /* ---------- Menu mobile ---------- */
   if (menuToggle && menuLinks) {
@@ -73,25 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* ---------- Contador visual da oferta (não trava nada) ---------- */
-  if (countdown) {
-    const startSeconds = 60 * 60; // 1 hora
-    let remainingSeconds = startSeconds;
-
-    const format = (seconds) => {
-      const hours = String(Math.floor(seconds / 3600)).padStart(2, "0");
-      const minutes = String(Math.floor((seconds % 3600) / 60)).padStart(2, "0");
-      const secs = String(seconds % 60).padStart(2, "0");
-      return `${hours}:${minutes}:${secs}`;
-    };
-
-    const tick = () => {
-      remainingSeconds = remainingSeconds > 0 ? remainingSeconds - 1 : startSeconds;
-      countdown.textContent = format(remainingSeconds);
-    };
-
-    countdown.textContent = format(remainingSeconds);
-    setInterval(tick, 1000);
-  }
+  // Removido: a página não usa mais contador regressivo (gera desconfiança no público mais velho).
 
   /* ---------- Destaque da oferta ao clicar em "comprar" ---------- */
   const offerCard = document.querySelector(".offer-card");
