@@ -648,9 +648,46 @@ body.senior { font-size: 20px; line-height: 1.7; }
 /* Passos: variação sem ícone/parágrafo */
 .steps-grid .step-card h3 { margin: 4px 0 0; }
 
+/* Identificação / Dor */
+.pain-grid {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px; max-width: 880px; margin: 0 auto;
+}
+.pain-card {
+  display: flex; gap: 14px; align-items: flex-start;
+  background: var(--card); border-radius: var(--radius);
+  padding: 22px 22px; box-shadow: var(--shadow-sm);
+  border-left: 6px solid var(--pink);
+}
+.pain-card__icon { font-size: 2rem; line-height: 1; flex-shrink: 0; }
+.pain-card p { margin: 0; font-size: 1.08rem; color: var(--text); font-weight: 600; }
+.pain-note {
+  text-align: center; max-width: 680px; margin: 26px auto 0;
+  font-size: 1.18rem; font-weight: 800; color: var(--ink);
+}
+
+/* Transformação / Desejo */
+.transform-box {
+  max-width: 760px; margin: 0 auto; text-align: center;
+  background: var(--card); border-radius: var(--radius-lg);
+  padding: 40px 30px; box-shadow: var(--shadow-lg);
+}
+.transform-box h2 {
+  font-family: "Poppins", "Nunito", sans-serif; font-weight: 800; color: var(--ink);
+  font-size: clamp(1.6rem, 3.4vw, 2.3rem); margin: 0 0 22px;
+}
+.transform-list { list-style: none; margin: 0 auto 18px; padding: 0; display: grid; gap: 16px; text-align: left; max-width: 560px; }
+.transform-list li { font-weight: 700; color: var(--text); font-size: 1.12rem; line-height: 1.45; }
+.transform-list strong { color: var(--pink-dark); }
+.transform-note { font-weight: 800; color: var(--ink); font-size: 1.1rem; margin: 0; }
+
 @media (max-width: 980px) {
   .receive-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 560px) {
+  .pain-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 560px) {
