@@ -30,12 +30,11 @@
 </head>
 <body class="senior">
   <!-- Barra de confiança discreta -->
-  <div class="trustbar">
-    <span>🔒 Compra segura</span>
-    <span>•</span>
-    <span>💳 Pagamento único</span>
-    <span>•</span>
-    <span>🛡️ Garantia de 7 dias</span>
+  <div class="trustbar" data-trustbar-carousel>
+    <span class="trustbar__slide is-active">✨ OFERTA ESPECIAL DE HOJE: ACESSO COMPLETO POR R$ 19,90</span>
+    <span class="trustbar__slide">🧶 MAIS DE 4.700 MULHERES JÁ ESCOLHERAM ESTE MÉTODO</span>
+    <span class="trustbar__slide">📱 ACESSO IMEDIATO NO CELULAR APÓS A COMPRA</span>
+    <span class="trustbar__slide">🛡️ TESTE POR 7 DIAS COM GARANTIA TOTAL</span>
   </div>
 
   <header class="topbar topbar--simple" id="top">
@@ -57,6 +56,7 @@
       <div class="container hero__grid">
         <div class="hero__content reveal">
           <span class="eyebrow">🧶 Sousplats em crochê para mesa posta</span>
+          <span class="hero-social-proof">⭐ 4.7/5 de satisfação entre alunas</span>
           <h1>Aprenda a fazer <span class="accent">sousplats lindos</span> pelo celular e transforme isso em renda extra, mesmo começando do zero</h1>
           <p class="lead">Você recebe um passo a passo simples para aprender no seu ritmo, criar peças bonitas para sua mesa e ainda aproveitar isso para vender, presentear ou ocupar o tempo com algo prazeroso.</p>
 
@@ -110,6 +110,44 @@
             <span>💳 Pagamento único de R$ 19,90</span>
           </div>
           <a class="btn btn--primary btn--xl" href="https://pay.cakto.com.br/pynu7jf_850468" target="_blank" rel="noopener noreferrer">SIM, QUERO COMEÇAR AGORA</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 1c. VITRINE EM VÍDEO -->
+    <section class="section reveal" id="vitrine-videos">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Veja o resultado na prática</h2>
+          <p>Vídeos curtos para você sentir o acabamento das peças e o valor percebido.</p>
+        </div>
+
+        <div class="video-strip" aria-label="Vitrine de vídeos em loop">
+          <figure class="video-strip__card">
+            <video autoplay muted loop playsinline preload="metadata" poster="videos/posters/ad1.jpg" aria-label="Demonstração de sousplat em crochê">
+              <source src="videos/web/ad1_web.mp4" type="video/mp4" />
+            </video>
+          </figure>
+          <figure class="video-strip__card">
+            <video autoplay muted loop playsinline preload="metadata" poster="videos/posters/ad2.jpg" aria-label="Demonstração de modelo em crochê">
+              <source src="videos/web/ad2_web.mp4" type="video/mp4" />
+            </video>
+          </figure>
+          <figure class="video-strip__card">
+            <video autoplay muted loop playsinline preload="metadata" poster="videos/posters/extra_a.jpg" aria-label="Demonstração de coleção de sousplats">
+              <source src="videos/web/extra_a_web.mp4" type="video/mp4" />
+            </video>
+          </figure>
+          <figure class="video-strip__card">
+            <video autoplay muted loop playsinline preload="metadata" poster="videos/posters/extra_b.jpg" aria-label="Demonstração de variações de sousplat">
+              <source src="videos/web/extra_b_web.mp4" type="video/mp4" />
+            </video>
+          </figure>
+          <figure class="video-strip__card">
+            <video autoplay muted loop playsinline preload="metadata" poster="videos/posters/extra_c.jpg" aria-label="Demonstração de peça decorativa em crochê">
+              <source src="videos/web/extra_c_web.mp4" type="video/mp4" />
+            </video>
+          </figure>
         </div>
       </div>
     </section>
@@ -494,14 +532,13 @@
 
   <!-- CTA flutuante -->
   <a class="floating-cta" href="https://pay.cakto.com.br/pynu7jf_850468" target="_blank" rel="noopener noreferrer">
-    <span>Quero meu acesso</span>
-    <strong>R$ 19,90 →</strong>
+    <strong>Acessar por R$ 19,90 →</strong>
   </a>
 
   <footer class="footer">
     <div class="container footer__grid">
       <div>
-        <strong>Crochê Digital da Vovó © 2026</strong>
+        <strong>Produto digital © 2026</strong>
         <p>Produto digital. Nenhum material físico será enviado pelos Correios.</p>
         <p class="footer__made">Feito com ❤ para quem ama crochê</p>
       </div>

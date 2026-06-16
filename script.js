@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const menuToggle = document.querySelector("[data-menu-toggle]");
   const menuLinks = document.querySelector("[data-menu-links]");
   const accordion = document.querySelector("[data-accordion]");
+  const trustbarCarousel = document.querySelector("[data-trustbar-carousel]");
 
   /* ---------- Menu mobile ---------- */
   if (menuToggle && menuLinks) {
@@ -53,6 +54,27 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  /* ---------- Carrossel de mensagens da barra superior ---------- */
+  if (trustbarCarousel) {
+    const slides = Array.from(trustbarCarousel.querySelectorAll(".trustbar__slide"));
+    let activeIndex = slides.findIndex((slide) => slide.classList.contains("is-active"));
+    if (activeIndex < 0) activeIndex = 0;
+
+    const showSlide = (index) => {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle("is-active", i === index);
+      });
+      activeIndex = index;
+    };
+
+    if (slides.length > 1) {
+      window.setInterval(() => {
+        const nextIndex = (activeIndex + 1) % slides.length;
+        showSlide(nextIndex);
+      }, 2600);
+    }
+  }
+
   /* ---------- Animações ao rolar ---------- */
   const animatedItems = document.querySelectorAll(".reveal, .stagger");
   if (animatedItems.length) {
@@ -79,19 +101,32 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* ---------- Rolagem suave com easing até as âncoras ---------- */
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const urgencyBar = document.querySelector(".urgency-bar");
+  const stickyPromoBar = document.querySelector(".urgency-bar, .trustbar");
   const topbar = document.querySelector(".topbar");
 
+  const stickyHeight = (element) => {
+    if (!element) return 0;
+    const position = window.getComputedStyle(element).position;
+    if (position === "sticky" || position === "fixed") return element.offsetHeight;
+    return 0;
+  };
+
   const headerOffset = () => {
-    const bar = urgencyBar ? urgencyBar.offsetHeight : 0;
-    const nav = topbar ? topbar.offsetHeight : 0;
+    const bar = stickyHeight(stickyPromoBar);
+    const nav = stickyHeight(topbar);
     return bar + nav + 12;
   };
 
   /* ---------- Mantém o menu colado logo abaixo da barra de oferta ---------- */
   const syncTopbarOffset = () => {
-    if (urgencyBar && topbar) {
-      topbar.style.top = `${urgencyBar.offsetHeight}px`;
+    if (topbar) {
+      const isTopbarSticky = ["sticky", "fixed"].includes(window.getComputedStyle(topbar).position);
+      if (isTopbarSticky) {
+        const barHeight = stickyHeight(stickyPromoBar);
+        topbar.style.top = `${barHeight}px`;
+      } else {
+        topbar.style.top = "";
+      }
     }
   };
   syncTopbarOffset();
@@ -187,5 +222,25 @@ document.addEventListener("DOMContentLoaded", () => {
       { threshold: 0.4 }
     );
     offerObserver.observe(offerSection);
+  }
+
+  // Tenta iniciar vídeos em loop quando a seção entra na área visível
+  const videoShowcase = document.getElementById("vitrine-videos");
+  if (videoShowcase && "IntersectionObserver" in window) {
+    const videos = videoShowcase.querySelectorAll("video");
+    const videoObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          const video = entry.target;
+          if (video && typeof video.play === "function") {
+            video.play().catch(() => {});
+          }
+        });
+      },
+      { threshold: 0.25 }
+    );
+
+    videos.forEach((video) => videoObserver.observe(video));
   }
 });
