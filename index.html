@@ -524,5 +524,112 @@
   </footer>
 
   <script src="script.js" defer></script>
+  <script>
+    (function () {
+      const TRACKING_KEYS = [
+        "utm_source",
+        "utm_medium",
+        "utm_campaign",
+        "utm_content",
+        "utm_term",
+        "utm_id",
+        "utm_campaign_id",
+        "utm_adset_id",
+        "utm_ad_id",
+        "utm_placement",
+        "campaign_id",
+        "adset_id",
+        "ad_id",
+        "fbclid",
+        "gclid",
+        "ttclid",
+        "src"
+      ];
+
+      const STORAGE_KEY = "utmify_tracking_params";
+      const EXPIRATION_MS = 7 * 24 * 60 * 60 * 1000;
+
+      function loadSavedParams() {
+        try {
+          const raw = localStorage.getItem(STORAGE_KEY);
+          if (!raw) return {};
+
+          const saved = JSON.parse(raw);
+
+          if (!saved.ts || Date.now() - saved.ts > EXPIRATION_MS) {
+            localStorage.removeItem(STORAGE_KEY);
+            return {};
+          }
+
+          return saved.data || {};
+        } catch (e) {
+          return {};
+        }
+      }
+
+      function saveCurrentParams() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const savedParams = loadSavedParams();
+        let changed = false;
+
+        TRACKING_KEYS.forEach(function (key) {
+          const value = urlParams.get(key);
+          if (value) {
+            savedParams[key] = value;
+            changed = true;
+          }
+        });
+
+        if (changed) {
+          localStorage.setItem(
+            STORAGE_KEY,
+            JSON.stringify({
+              ts: Date.now(),
+              data: savedParams
+            })
+          );
+        }
+      }
+
+      function applyParamsToCheckoutLinks() {
+        const savedParams = loadSavedParams();
+        if (!Object.keys(savedParams).length) return;
+
+        const checkoutWords = /checkout|comprar|pagamento|pay|cacto|kiwify|perfectpay|hotmart|eduzz|pepper/i;
+
+        document.querySelectorAll("a[href]").forEach(function (link) {
+          const checkText = (link.href + " " + (link.textContent || "")).toLowerCase();
+
+          if (!checkoutWords.test(checkText)) return;
+
+          try {
+            const url = new URL(link.href);
+
+            Object.entries(savedParams).forEach(function ([key, value]) {
+              if (value && !url.searchParams.has(key)) {
+                url.searchParams.set(key, value);
+              }
+            });
+
+            link.href = url.toString();
+          } catch (e) {}
+        });
+      }
+
+      saveCurrentParams();
+
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", applyParamsToCheckoutLinks);
+      } else {
+        applyParamsToCheckoutLinks();
+      }
+
+      const observer = new MutationObserver(applyParamsToCheckoutLinks);
+      observer.observe(document.body, {
+        childList: true,
+        subtree: true
+      });
+    })();
+  </script>
 </body>
 </html>
