@@ -189,7 +189,7 @@ const calculateProfile = () => {
 };
 
 const buildOfferLink = () => {
-  const target = new URL("index.html", window.location.href);
+  const target = new URL("oferta.html", window.location.href);
   const query = new URLSearchParams(window.location.search);
 
   TRACKING_KEYS.forEach((key) => {

@@ -37,350 +37,50 @@
     <span class="trustbar__slide">🛡️ TESTE POR 7 DIAS COM GARANTIA TOTAL</span>
   </div>
 
-  <header class="topbar topbar--simple" id="top">
-    <div class="navbar container">
-      <a class="brand" href="#top" aria-label="Ir para o topo">
-        <span class="brand__mark">🧶</span>
-        <span class="brand__text">
-          <strong>Crochê Digital da Vovó</strong>
-          <small>Sousplats • Receitas • Videoaulas</small>
-        </span>
-      </a>
-      <a class="btn btn--primary btn--small" href="https://pay.cakto.com.br/pynu7jf_850468" target="_blank" rel="noopener noreferrer">Quero meu acesso</a>
-      <a class="btn btn--outline btn--small" href="quiz.html" rel="noopener noreferrer" data-preserve-tracking="true">Fazer quiz de 2 min</a>
-    </div>
-  </header>
+  <!DOCTYPE html>
+  <html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <title>Redirecionando para o Quiz...</title>
+    <script>
+      (function () {
+        const target = new URL("quiz.html", window.location.href);
+        const currentParams = new URLSearchParams(window.location.search);
 
-  <main>
-    <!-- 1. HERO -->
-    <section class="hero section">
-      <div class="container hero__grid">
-        <div class="hero__content reveal">
-          <span class="eyebrow">🧶 Sousplats em crochê para mesa posta</span>
-          <span class="hero-social-proof">⭐ 4.7/5 de satisfação entre alunas</span>
-          <h1>Aprenda a fazer <span class="accent">sousplats lindos</span> pelo celular e transforme isso em renda extra, mesmo começando do zero</h1>
-          <p class="lead">Você recebe um passo a passo simples para aprender no seu ritmo, criar peças bonitas para sua mesa e ainda aproveitar isso para vender, presentear ou ocupar o tempo com algo prazeroso.</p>
+        currentParams.forEach(function (value, key) {
+          if (value) target.searchParams.set(key, value);
+        });
 
-          <div class="hero-proof-list" aria-label="Benefícios rápidos">
-            <span>✔ Feito para iniciantes</span>
-            <span>✔ Aula simples e sem linguagem difícil</span>
-            <span>✔ Você assiste no seu ritmo, quando quiser</span>
-            <span>✔ Pode fazer para vender, presentear ou decorar sua casa</span>
-          </div>
-
-          <div class="hero-info">
-            <span>✔ Acesso liberado logo após o pagamento</span>
-            <span>✔ Acesso vitalício sem mensalidade</span>
-            <span>✔ 7 dias de garantia para testar com calma</span>
-          </div>
-
-          <div class="hero-offer-box" aria-label="Resumo da oferta">
-            <div class="hero-price">
-              <span class="hero-price__old">De R$ 47,00 por</span>
-              <strong class="hero-price__new">R$ 19,90</strong>
-            </div>
-            <div class="hero-offer-box__meta">
-              <span>Pagamento único</span>
-              <span>Recebe no celular</span>
-              <span>Comece hoje mesmo</span>
-            </div>
-          </div>
-
-          <a class="btn btn--primary btn--xl" href="https://pay.cakto.com.br/pynu7jf_850468" target="_blank" rel="noopener noreferrer">QUERO ACESSAR AGORA POR R$ 19,90</a>
-          <p class="microcopy">🔒 Compra segura • Acesso liberado na hora • Pix, cartão e boleto</p>
-        </div>
-
-        <div class="hero__visual reveal">
-          <figure class="hero-photo card-float">
-            <img src="images/new_hero_capa.png" alt="Capa principal do curso com modelos de sousplat em crochê" loading="eager" />
-            <span class="hero-photo__badge">Mesa posta com charme</span>
-          </figure>
-        </div>
-      </div>
-    </section>
-
-    <!-- 1b. DECISÃO RÁPIDA -->
-    <section class="section section--soft reveal" id="decisao-rapida">
-      <div class="container">
-        <div class="quick-win">
-          <h2>O que você leva hoje no seu acesso:</h2>
-          <div class="quick-win__grid">
-            <span>📱 Acesso imediato no celular</span>
-            <span>🎥 Aulas em vídeo passo a passo</span>
-            <span>🛡️ 7 dias de garantia</span>
-            <span>💳 Pagamento único de R$ 19,90</span>
-          </div>
-          <a class="btn btn--primary btn--xl" href="https://pay.cakto.com.br/pynu7jf_850468" target="_blank" rel="noopener noreferrer">SIM, QUERO COMEÇAR AGORA</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- 1c. VITRINE EM VÍDEO -->
-    <section class="section reveal" id="vitrine-videos">
-      <div class="container">
-        <div class="section-heading">
-          <h2>Veja o resultado na prática</h2>
-          <p>Vídeos curtos para você sentir o acabamento das peças e o valor percebido.</p>
-        </div>
-
-        <div class="video-strip" aria-label="Vitrine de vídeos em loop">
-          <figure class="video-strip__card">
-            <video autoplay muted loop playsinline preload="metadata" poster="videos/posters/ad1.jpg" aria-label="Demonstração de sousplat em crochê">
-              <source src="videos/web/ad1_web.mp4" type="video/mp4" />
-            </video>
-          </figure>
-          <figure class="video-strip__card">
-            <video autoplay muted loop playsinline preload="metadata" poster="videos/posters/ad2.jpg" aria-label="Demonstração de modelo em crochê">
-              <source src="videos/web/ad2_web.mp4" type="video/mp4" />
-            </video>
-          </figure>
-          <figure class="video-strip__card">
-            <video autoplay muted loop playsinline preload="metadata" poster="videos/posters/extra_a.jpg" aria-label="Demonstração de coleção de sousplats">
-              <source src="videos/web/extra_a_web.mp4" type="video/mp4" />
-            </video>
-          </figure>
-          <figure class="video-strip__card">
-            <video autoplay muted loop playsinline preload="metadata" poster="videos/posters/extra_b.jpg" aria-label="Demonstração de variações de sousplat">
-              <source src="videos/web/extra_b_web.mp4" type="video/mp4" />
-            </video>
-          </figure>
-          <figure class="video-strip__card">
-            <video autoplay muted loop playsinline preload="metadata" poster="videos/posters/extra_c.jpg" aria-label="Demonstração de peça decorativa em crochê">
-              <source src="videos/web/extra_c_web.mp4" type="video/mp4" />
-            </video>
-          </figure>
-        </div>
-      </div>
-    </section>
-
-    <!-- 2. IDENTIFICAÇÃO / DOR -->
-    <section class="section reveal" id="identificacao">
-      <div class="container">
-        <div class="section-heading">
-          <h2>Você se identifica com isso?</h2>
-        </div>
-        <div class="pain-grid">
-          <article class="pain-card"><span class="pain-card__icon">😔</span><p>Você gostaria de ter um <strong>dinheirinho seu</strong>, sem depender de ninguém.</p></article>
-          <article class="pain-card"><span class="pain-card__icon">🤔</span><p>Já pensou em aprender crochê, mas achou que era <strong>difícil demais</strong> para você.</p></article>
-          <article class="pain-card"><span class="pain-card__icon">⏰</span><p>Tem um tempo livre em casa e queria <strong>ocupar com algo que dá prazer</strong> e orgulho.</p></article>
-          <article class="pain-card"><span class="pain-card__icon">📺</span><p>Cansou de ver vídeos soltos e confusos que <strong>não ensinam de verdade</strong>.</p></article>
-        </div>
-        <p class="pain-note">Se você se reconheceu em pelo menos uma dessas, este material foi feito pensando em você. 💛</p>
-      </div>
-    </section>
-
-    <!-- 2b. TRANSFORMAÇÃO / DESEJO -->
-    <section class="section section--soft reveal" id="transformacao">
-      <div class="container">
-        <div class="transform-box">
-          <h2>Imagine daqui a poucos dias…</h2>
-          <ul class="transform-list">
-            <li>✨ Suas próprias mãos criando peças lindas que enfeitam a sua mesa</li>
-            <li>💰 Vizinhas e amigas <strong>encomendando sousplats com você</strong> — uma renda extra todo mês</li>
-            <li>🥰 A sensação de orgulho ao dizer <strong>“fui eu que fiz”</strong></li>
-            <li>🎁 Presentes feitos à mão que ninguém esquece</li>
-          </ul>
-          <p class="transform-note">Tudo isso aprendendo no seu ritmo, pelo celular, mesmo começando do zero.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- 2c. BÔNUS / PROMESSA SECUNDÁRIA -->
-    <section class="section reveal" id="bonus-promessa">
-      <div class="container">
-        <div class="promise-box">
-          <figure class="promise-box__visual">
-            <img src="images/new_bonus_colecao.png" alt="Coleção de bônus de crochê com peças variadas" loading="lazy" />
-          </figure>
-          <div class="promise-box__content">
-            <h2>Além dos sousplats, você recebe muito mais</h2>
-            <p>Você também recebe receitas de <strong>tapetes, bolsas, flores, amigurumis e peças infantis</strong> — tudo organizado para acompanhar no seu ritmo.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 3. O QUE VOCÊ RECEBE -->
-    <section class="section reveal" id="recebe">
-      <div class="container">
-        <div class="section-heading">
-          <h2>O que você recebe</h2>
-        </div>
-
-        <div class="receive-grid">
-          <article class="receive-card"><span class="receive-card__icon">🎥</span><p>Aulas em vídeo para acompanhar no celular</p></article>
-          <article class="receive-card"><span class="receive-card__icon">📄</span><p>Receitas em PDF organizadas</p></article>
-          <article class="receive-card"><span class="receive-card__icon">🍽️</span><p>Modelos de sousplat para mesa posta</p></article>
-          <article class="receive-card"><span class="receive-card__icon">💝</span><p>Ideias de peças para vender ou presentear</p></article>
-          <article class="receive-card"><span class="receive-card__icon">♾️</span><p>Acesso vitalício, sem mensalidade</p></article>
-        </div>
-
-        <div class="center-cta">
-          <a class="btn btn--primary btn--xl" href="https://pay.cakto.com.br/pynu7jf_850468" target="_blank" rel="noopener noreferrer">QUERO APRENDER SOUSPLAT AGORA</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- 4. MODELOS / GALERIA -->
-    <section class="section section--soft reveal" id="modelos">
-      <div class="container">
-        <div class="section-heading">
-          <h2>Veja alguns modelos que você pode fazer</h2>
-        </div>
-
-        <div class="gallery-grid">
-          <figure class="model-card">
-            <img src="images/new_categorias.png" alt="Categorias de modelos de sousplat em crochê" loading="lazy" />
-            <figcaption>Categorias e modelos organizados</figcaption>
-          </figure>
-          <figure class="model-card">
-            <img src="images/01_azul_dourado_abertura.jpg" alt="Modelo azul com acabamento dourado" loading="lazy" />
-            <figcaption>Modelo azul com acabamento dourado</figcaption>
-          </figure>
-          <figure class="model-card">
-            <img src="images/05_mesa_posta_vermelho_branco.jpg" alt="Mesa posta com modelo vermelho e branco" loading="lazy" />
-            <figcaption>Mesa posta vermelho e branco</figcaption>
-          </figure>
-          <figure class="model-card">
-            <img src="images/06_preto_dourado_pronto.jpg" alt="Modelo preto com dourado" loading="lazy" />
-            <figcaption>Modelo preto com dourado</figcaption>
-          </figure>
-          <figure class="model-card">
-            <img src="images/07_conjunto_cru_delicado.jpg" alt="Modelo delicado cru" loading="lazy" />
-            <figcaption>Modelo delicado cru</figcaption>
-          </figure>
-          <figure class="model-card">
-            <img src="images/09_verde_sousplat_conjunto.jpg" alt="Modelo verde moderno" loading="lazy" />
-            <figcaption>Modelo verde moderno</figcaption>
-          </figure>
-        </div>
-
-        <div class="center-cta">
-          <a class="btn btn--primary btn--xl" href="https://pay.cakto.com.br/pynu7jf_850468" target="_blank" rel="noopener noreferrer">QUERO RECEBER NO CELULAR</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- 5. É SIMPLES DE ACESSAR -->
-    <section class="section reveal" id="como-funciona">
-      <div class="container">
-        <div class="section-heading">
-          <h2>É simples de acessar</h2>
-        </div>
-
-        <div class="steps-grid">
-          <article class="step-card"><span class="step-card__num">1</span><h3>Faça o pagamento com segurança</h3></article>
-          <article class="step-card"><span class="step-card__num">2</span><h3>Receba o acesso digital</h3></article>
-          <article class="step-card"><span class="step-card__num">3</span><h3>Abra pelo celular e comece a fazer suas peças</h3></article>
-        </div>
-
-        <p class="simple-note">Não é material físico. Você recebe tudo digitalmente para acessar pelo celular.</p>
-
-        <div class="center-cta">
-          <a class="btn btn--primary btn--xl" href="https://pay.cakto.com.br/pynu7jf_850468" target="_blank" rel="noopener noreferrer">QUERO COMEÇAR AINDA HOJE</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- 6. PARA QUEM E PARA QUEM NAO E -->
-    <section class="section reveal" id="perfil">
-      <div class="container">
-        <div class="section-heading">
-          <h2>Esse material é para você?</h2>
-        </div>
-
-        <div class="fit-grid">
-          <article class="fit-card fit-card--yes">
-            <h3>SIM, é para você se...</h3>
-            <ul>
-              <li>Quer aprender sousplat do zero, com calma</li>
-              <li>Busca uma renda extra em casa</li>
-              <li>Gosta de peças bonitas para mesa posta</li>
-              <li>Prefere aulas simples no celular</li>
-            </ul>
-          </article>
-
-          <article class="fit-card fit-card--no">
-            <h3>Talvez não seja para você se...</h3>
-            <ul>
-              <li>Não quer praticar nenhum passo</li>
-              <li>Procura material físico enviado pelos Correios</li>
-              <li>Quer resultado sem assistir às aulas</li>
-              <li>Não gosta de trabalhos manuais</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- 7. AUTORIDADE / ACOLHIMENTO -->
-    <section class="section section--soft reveal" id="autoridade">
-      <div class="container">
-        <div class="creator-box">
-          <figure class="creator-box__photo">
-            <img src="images/new_mockup_acesso.png" alt="Mockup do acesso digital com conteúdo de crochê" loading="lazy" />
-          </figure>
-          <div class="creator-box__content">
-            <h2>Um passo a passo pensado para quem quer aprender sem complicação</h2>
-            <p>Este material foi organizado com linguagem simples, aula por aula, para você conseguir acompanhar no seu ritmo e concluir suas primeiras peças com segurança.</p>
-            <p>Você não precisa correr. Basta abrir no celular, seguir os pontos e repetir com calma.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 8. CONFIANÇA -->
-    <section class="section section--soft reveal" id="confianca">
-      <div class="container">
-        <div class="trust-badges">
-          <span class="trust-badge">🔒 Compra segura</span>
-          <span class="trust-badge">💳 Pagamento único</span>
-          <span class="trust-badge">🛡️ Garantia de 7 dias</span>
-          <span class="trust-badge">✅ Sem mensalidade</span>
-          <span class="trust-badge">📱 Funciona no celular</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- 9. DEPOIMENTOS -->
-    <section class="section reveal" id="depoimentos">
-      <div class="container">
-        <div class="section-heading">
-          <h2>O que este material pode destravar para você</h2>
-        </div>
-
-        <div class="testimonial-grid">
-          <figure class="testimonial-card">
-            <span class="testimonial-card__label">Para quem começa do zero</span>
-            <span class="stars">★★★★★</span>
-            <blockquote>Você sai da sensação de “isso é difícil demais para mim” e passa a acompanhar um passo a passo simples, repetindo com calma até concluir suas primeiras peças.</blockquote>
-            <figcaption>
-              <strong>Aprendizado no seu ritmo</strong>
-              <small>Sem pressa, sem complicação e direto no celular</small>
-            </figcaption>
-          </figure>
-          <figure class="testimonial-card">
-            <span class="testimonial-card__label">Para quem quer renda extra</span>
-            <span class="stars">★★★★★</span>
-            <blockquote>Ao aprender modelos bonitos e valorizados, fica muito mais fácil mostrar para vizinhas, amigas e familiares e começar a receber encomendas.</blockquote>
-            <figcaption>
-              <strong>Peças que ajudam a vender</strong>
-              <small>Modelos pensados para mesa posta e presentes</small>
-            </figcaption>
-          </figure>
-          <figure class="testimonial-card">
-            <span class="testimonial-card__label">Para quem quer utilidade e prazer</span>
-            <span class="stars">★★★★★</span>
-            <blockquote>Você ocupa o tempo com algo bonito, produtivo e prazeroso, vendo suas mãos criarem peças que enfeitam a casa e ainda rendem elogios.</blockquote>
-            <figcaption>
-              <strong>Resultado bonito e útil</strong>
-              <small>Para decorar, presentear ou transformar em renda</small>
-            </figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
-
+        window.location.replace(target.toString());
+      })();
+    </script>
+    <style>
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        font-family: Arial, sans-serif;
+        background: #fdf0e5;
+        color: #2f2d47;
+        padding: 24px;
+        text-align: center;
+      }
+      a {
+        color: #2f2d47;
+        font-weight: 700;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <p>Redirecionando para o quiz...</p>
+      <p>Se nada acontecer, <a href="quiz.html">toque aqui para continuar</a>.</p>
+    </main>
+  </body>
+  </html>
     <!-- 10. DÚVIDAS QUE TRAVAM A COMPRA -->
     <section class="section reveal" id="duvidas-compra">
       <div class="container">
