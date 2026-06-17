@@ -47,6 +47,7 @@
         </span>
       </a>
       <a class="btn btn--primary btn--small" href="https://pay.cakto.com.br/pynu7jf_850468" target="_blank" rel="noopener noreferrer">Quero meu acesso</a>
+      <a class="btn btn--outline btn--small" href="quiz.html" rel="noopener noreferrer" data-preserve-tracking="true">Fazer quiz de 2 min</a>
     </div>
   </header>
 
@@ -619,7 +620,7 @@
         }
       }
 
-      function applyParamsToCheckoutLinks() {
+      function applyParamsToTrackedLinks() {
         const savedParams = loadSavedParams();
         if (!Object.keys(savedParams).length) return;
 
@@ -627,8 +628,9 @@
 
         document.querySelectorAll("a[href]").forEach(function (link) {
           const checkText = (link.href + " " + (link.textContent || "")).toLowerCase();
+          const preserveTracking = link.dataset && link.dataset.preserveTracking === "true";
 
-          if (!checkoutWords.test(checkText)) return;
+          if (!checkoutWords.test(checkText) && !preserveTracking) return;
 
           try {
             const url = new URL(link.href);
@@ -647,12 +649,12 @@
       saveCurrentParams();
 
       if (document.readyState === "loading") {
-        document.addEventListener("DOMContentLoaded", applyParamsToCheckoutLinks);
+        document.addEventListener("DOMContentLoaded", applyParamsToTrackedLinks);
       } else {
-        applyParamsToCheckoutLinks();
+        applyParamsToTrackedLinks();
       }
 
-      const observer = new MutationObserver(applyParamsToCheckoutLinks);
+      const observer = new MutationObserver(applyParamsToTrackedLinks);
       observer.observe(document.body, {
         childList: true,
         subtree: true

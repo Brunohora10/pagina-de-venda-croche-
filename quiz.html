@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Descubra seu perfil no crochê em 2 minutos e receba uma recomendação personalizada para começar a criar sousplats lindos." />
+  <title>Quiz do Crochê | Descubra Seu Perfil</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Nunito:wght@500;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="quiz.css" />
+
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1389836516248571');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1389836516248571&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+</head>
+<body>
+  <main class="quiz-shell">
+    <div class="ambient ambient--one" aria-hidden="true"></div>
+    <div class="ambient ambient--two" aria-hidden="true"></div>
+
+    <section class="quiz-card">
+      <header class="quiz-brand">
+        <span class="quiz-brand__mark">🧶</span>
+        <strong>Método Sousplat</strong>
+      </header>
+
+      <div id="intro" class="view is-active" aria-live="polite">
+        <span class="tag">Quiz rápido · 2 minutos</span>
+        <h1>Qual é o seu momento no crochê?</h1>
+        <p>Responda 6 perguntas simples e veja o caminho ideal para criar peças bonitas e, se quiser, começar sua renda extra.</p>
+
+        <ul class="pill-list" aria-label="Benefícios do quiz">
+          <li>⚡ Resultado personalizado</li>
+          <li>📱 Feito para celular</li>
+          <li>🎯 Direto ao ponto</li>
+        </ul>
+
+        <button class="btn btn--primary" id="start-quiz" type="button">Começar agora →</button>
+      </div>
+
+      <div id="quiz" class="view" aria-live="polite" hidden>
+        <div class="progress-wrap">
+          <p id="step-label">Pergunta 1 de 6</p>
+          <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+            <span id="progress-bar"></span>
+          </div>
+        </div>
+
+        <article class="question">
+          <h2 id="question-title"></h2>
+          <div id="options" class="options" role="listbox" aria-label="Opções de resposta"></div>
+        </article>
+
+        <div class="question-actions">
+          <button class="btn btn--ghost" id="prev-btn" type="button">← Voltar</button>
+          <button class="btn btn--primary" id="next-btn" type="button" disabled>Próxima →</button>
+        </div>
+      </div>
+
+      <div id="loading" class="view" hidden aria-live="polite">
+        <p class="loading-title">Analisando suas respostas...</p>
+        <div class="loading-dots" aria-hidden="true">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+
+      <div id="result" class="view" hidden aria-live="polite">
+        <span class="tag">Seu perfil personalizado</span>
+        <h2 id="result-title"></h2>
+        <p id="result-text" class="result-text"></p>
+
+        <div class="result-benefits">
+          <h3>O melhor próximo passo para você:</h3>
+          <ul id="result-benefits-list"></ul>
+        </div>
+
+        <div class="result-timer">
+          <span>Oferta sugerida disponível por:</span>
+          <strong id="timer">10:00</strong>
+        </div>
+
+        <a id="offer-link" class="btn btn--primary btn--block" href="index.html">Ver minha oferta personalizada →</a>
+        <p class="microcopy">Pagamento seguro · Acesso imediato · 7 dias de garantia</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="quiz.js" defer></script>
+</body>
+</html>
