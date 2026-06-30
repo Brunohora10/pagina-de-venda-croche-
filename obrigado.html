@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex" />
+  <title>Compra confirmada! — Crochê Digital da Vovó</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Poppins:wght@700;800&display=swap" rel="stylesheet" />
+
+  <!-- Meta Pixel -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1389836516248571');
+  fbq('track', 'PageView');
+  fbq('track', 'Purchase', { value: 19.90, currency: 'BRL', content_name: 'Crochê Digital da Vovó', content_type: 'product' });
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1389836516248571&ev=Purchase&noscript=1"
+  /></noscript>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Nunito", Arial, sans-serif;
+      background: linear-gradient(160deg, #fdf0e5 0%, #fce4f1 100%);
+      min-height: 100vh;
+      color: #2f2d47;
+    }
+
+    .page {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 40px 24px 60px;
+      text-align: center;
+    }
+
+    .check-circle {
+      width: 80px;
+      height: 80px;
+      background: #4eba45;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+      font-size: 2.2rem;
+      animation: popIn .5s cubic-bezier(.175,.885,.32,1.275) both;
+    }
+
+    @keyframes popIn {
+      from { transform: scale(0); opacity: 0; }
+      to   { transform: scale(1); opacity: 1; }
+    }
+
+    h1 {
+      font-family: "Poppins", "Nunito", sans-serif;
+      font-size: clamp(1.6rem, 5vw, 2.2rem);
+      margin: 0 0 10px;
+      color: #2f2d47;
+    }
+
+    .subtitle {
+      font-size: 1.05rem;
+      color: #5b5878;
+      margin: 0 0 32px;
+      line-height: 1.6;
+    }
+
+    .access-box {
+      background: #fff;
+      border-radius: 18px;
+      padding: 24px 28px;
+      margin-bottom: 32px;
+      box-shadow: 0 8px 32px rgba(47,45,71,.10);
+      text-align: left;
+    }
+
+    .access-box h2 {
+      font-size: 1rem;
+      font-weight: 900;
+      margin: 0 0 14px;
+      color: #2f2d47;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .access-box ol {
+      margin: 0;
+      padding-left: 20px;
+      color: #3d3b55;
+    }
+
+    .access-box li {
+      margin-bottom: 10px;
+      font-size: 0.97rem;
+      line-height: 1.55;
+    }
+
+    .divider {
+      border: none;
+      border-top: 2px dashed rgba(236,77,138,.2);
+      margin: 32px 0;
+    }
+
+    .social-ask {
+      background: #fff;
+      border-radius: 18px;
+      padding: 28px 28px 24px;
+      box-shadow: 0 8px 32px rgba(47,45,71,.10);
+      margin-bottom: 24px;
+    }
+
+    .social-ask .emoji-big { font-size: 2.2rem; display: block; margin-bottom: 10px; }
+
+    .social-ask h2 {
+      font-family: "Poppins", "Nunito", sans-serif;
+      font-size: 1.15rem;
+      margin: 0 0 10px;
+      color: #2f2d47;
+    }
+
+    .social-ask p {
+      font-size: 0.95rem;
+      color: #5b5878;
+      line-height: 1.6;
+      margin: 0 0 20px;
+    }
+
+    .btn-comment {
+      display: block;
+      width: 100%;
+      padding: 16px 20px;
+      border-radius: 14px;
+      font-family: "Poppins", "Nunito", sans-serif;
+      font-size: 1rem;
+      font-weight: 800;
+      text-decoration: none;
+      text-align: center;
+      transition: transform .15s, box-shadow .15s;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-comment:hover { transform: translateY(-2px); }
+
+    .btn-video {
+      background: linear-gradient(135deg, #ec4d8a, #c73872);
+      color: #fff;
+      box-shadow: 0 6px 24px rgba(236,77,138,.35);
+      margin-bottom: 12px;
+    }
+
+    .btn-whatsapp {
+      background: #25d366;
+      color: #fff;
+      box-shadow: 0 6px 24px rgba(37,211,102,.30);
+    }
+
+    .or-divider {
+      font-size: 0.82rem;
+      color: #9a96b0;
+      margin: 10px 0;
+    }
+
+    .footer-note {
+      font-size: 0.82rem;
+      color: #9a96b0;
+      margin-top: 28px;
+      line-height: 1.6;
+    }
+
+    .footer-note a { color: #ec4d8a; }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <div class="check-circle">✓</div>
+
+    <h1>Compra confirmada! 🎉</h1>
+    <p class="subtitle">Bem-vinda ao Crochê Digital da Vovó.<br>Seu acesso já está sendo liberado — veja abaixo como acessar.</p>
+
+    <!-- Como acessar -->
+    <div class="access-box">
+      <h2>📱 Como acessar o seu material</h2>
+      <ol>
+        <li>Verifique seu <strong>e-mail ou WhatsApp</strong> — o link de acesso chega em poucos minutos após o pagamento ser confirmado.</li>
+        <li>Abra o link no celular e salve nos <strong>Favoritos</strong> para acessar sempre que quiser.</li>
+        <li>Em caso de dúvida, procure o e-mail de confirmação da <strong>Cakto</strong> na sua caixa de entrada (ou no spam).</li>
+      </ol>
+    </div>
+
+    <hr class="divider" />
+
+    <!-- Pedido de comentário -->
+    <div class="social-ask">
+      <span class="emoji-big">💬</span>
+      <h2>Você pode me ajudar muito com uma coisa simples</h2>
+      <p>
+        Sua opinião vale muito — para mim <strong>e para outras mulheres</strong> que ainda estão em dúvida se vale a pena.<br><br>
+        Se você ficou feliz com a compra, vai direto no nosso vídeo e deixa um comentário dizendo o que achou. Pode ser curto mesmo — isso ajuda outras pessoas a decidirem e me ajuda a continuar.
+      </p>
+
+      <!-- ATENÇÃO: substitua o href abaixo pelo link do seu vídeo/post no Instagram ou Facebook -->
+      <a class="btn-comment btn-video" href="COLE_AQUI_O_LINK_DO_SEU_VIDEO" target="_blank" rel="noopener noreferrer">
+        💬 Comentar no vídeo agora
+      </a>
+
+      <p class="or-divider">— ou —</p>
+
+      <a class="btn-comment btn-whatsapp" id="whatsapp-share" href="#" target="_blank" rel="noopener noreferrer">
+        📲 Compartilhar no WhatsApp
+      </a>
+    </div>
+
+    <p class="footer-note">
+      Dúvidas? Entre em contato pelo canal de atendimento informado no e-mail de confirmação.<br>
+      <a href="privacidade.html">Política de Privacidade</a> · <a href="termos.html">Termos de Uso</a>
+    </p>
+
+  </div>
+
+  <script>
+    // Pré-preenche o link de compartilhamento WhatsApp dinamicamente
+    var whatsappMsg = encodeURIComponent(
+      "Acabei de comprar o Crochê Digital da Vovó e já tô amando! 🧶\n" +
+      "Se você curte crochê, vale muito a pena. Paguei só R$19,90 e o acesso é vitalício!\n" +
+      "Dá uma olhada: https://pay.cakto.com.br/pynu7jf_850468"
+    );
+    document.getElementById("whatsapp-share").href = "https://wa.me/?text=" + whatsappMsg;
+  </script>
+
+  <script
+    src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+    data-utmify-prevent-xcod-sck
+    data-utmify-prevent-subids
+    async
+    defer
+  ></script>
+</body>
+</html>

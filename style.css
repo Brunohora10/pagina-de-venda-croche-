@@ -356,6 +356,8 @@ h1, h2, h3 { letter-spacing: -0.02em; }
 }
 .testimonial-card .stars { display: block; margin-bottom: 12px; }
 .testimonial-card blockquote { margin: 0 0 18px; color: var(--text); font-size: 1.02rem; font-weight: 700; }
+.testimonial-card__quote { margin: 0 0 16px; color: var(--text); font-size: 0.97rem; line-height: 1.65; font-style: italic; }
+.testimonial-card__quote::before { content: "\201C"; font-size: 1.4rem; color: var(--pink); line-height: 0; vertical-align: -0.3em; margin-right: 2px; }
 .testimonial-card figcaption strong { display: block; color: var(--ink); font-family: "Poppins", "Nunito", sans-serif; font-weight: 700; }
 .testimonial-card figcaption small { color: var(--muted); }
 
