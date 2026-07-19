@@ -224,23 +224,33 @@ document.addEventListener("DOMContentLoaded", () => {
     offerObserver.observe(offerSection);
   }
 
-  // Tenta iniciar vídeos em loop quando a seção entra na área visível
-  const videoShowcase = document.getElementById("vitrine-videos");
-  if (videoShowcase && "IntersectionObserver" in window) {
-    const videos = videoShowcase.querySelectorAll("video");
-    const videoObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          const video = entry.target;
-          if (video && typeof video.play === "function") {
-            video.play().catch(() => {});
-          }
-        });
-      },
-      { threshold: 0.25 }
-    );
+  /* ---------- Barra fixa mobile: aparece após passar do CTA do hero ---------- */
+  const heroCta = document.getElementById("hero-cta");
+  const floatingBar = document.getElementById("floating-cta");
+  const floatingBarClose = document.getElementById("floating-cta-close");
+  let floatingBarDismissed = false;
 
-    videos.forEach((video) => videoObserver.observe(video));
+  if (heroCta && floatingBar) {
+    let ticking = false;
+    const checkHeroCtaPosition = () => {
+      ticking = false;
+      if (floatingBarDismissed) return;
+      const passedHero = heroCta.getBoundingClientRect().bottom < 0;
+      floatingBar.classList.toggle("is-visible", passedHero);
+    };
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      window.requestAnimationFrame(checkHeroCtaPosition);
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    checkHeroCtaPosition();
+  }
+
+  if (floatingBarClose && floatingBar) {
+    floatingBarClose.addEventListener("click", () => {
+      floatingBarDismissed = true;
+      floatingBar.classList.remove("is-visible");
+    });
   }
 });
